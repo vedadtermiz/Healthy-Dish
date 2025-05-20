@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quinoa Power Salad - Healthy Dish</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='48'%3E%F0%9F%A5%92%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Healthy Dish</div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#recipe"><i class="fas fa-utensils"></i> Recipe</a></li>
+                <li><a href="#nutrition"><i class="fas fa-chart-pie"></i> Nutrition</a></li>
+                <li><a href="#ingredients"><i class="fas fa-list"></i> Ingredients</a></li>
+                <li><a href="#customization"><i class="fas fa-sliders-h"></i> Customize</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle"><i class="fas fa-ellipsis-h"></i> More <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#cooking-mode-section" class="cooking-mode-nav"><i class="fas fa-fire"></i> Cooking Mode</a></li>
+                        <li><a href="#collections-section" class="collections-nav"><i class="fas fa-bookmark"></i> My Collections</a></li>
+                        <li><a href="#data-management-section" class="data-management-nav"><i class="fas fa-cog"></i> Data</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Quinoa Power Salad</h1>
+            <p class="subtitle">A nutritious, protein-packed meal ready in under 30 minutes</p>
+            <div class="recipe-meta">
+                <span><i class="fas fa-clock"></i> 30 mins</span>
+                <span><i class="fas fa-fire"></i> 550 kcal</span>
+                <span><i class="fas fa-drumstick-bite"></i> 40g protein</span>
+            </div>
+            <div class="hero-buttons">
+                <button class="print-btn"><i class="fas fa-print"></i> Print Recipe</button>
+                <button class="share-btn"><i class="fas fa-share-alt"></i> Share</button>
+                <button class="save-btn"><i class="fas fa-bookmark"></i> Save</button>
+                <button class="shopping-list-btn"><i class="fas fa-shopping-cart"></i> Add to Shopping List</button>
+            </div>
+        </section>
+
+        <div class="shopping-list-modal">
+            <div class="shopping-list-content">
+                <div class="shopping-list-header">
+                    <h3>Shopping List</h3>
+                    <button class="close-shopping-list"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="shopping-list-items"></div>
+                <div class="shopping-list-actions">
+                    <button class="export-list-btn"><i class="fas fa-download"></i> Export List</button>
+                    <button class="clear-list-btn"><i class="fas fa-trash"></i> Clear List</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-tracker">
+            <div class="progress-step active" data-step="ingredients">
+                <i class="fas fa-list"></i>
+                <span>Ingredients</span>
+            </div>
+            <div class="progress-step" data-step="preparation">
+                <i class="fas fa-utensils"></i>
+                <span>Preparation</span>
+            </div>
+            <div class="progress-step" data-step="cooking">
+                <i class="fas fa-fire"></i>
+                <span>Cooking</span>
+            </div>
+            <div class="progress-step" data-step="serving">
+                <i class="fas fa-check"></i>
+                <span>Ready</span>
+            </div>
+        </div>
+
+        <section id="recipe" class="recipe-section">
+            <h2>Recipe</h2>
+            <div class="recipe-container">
+                <div class="ingredients-list">
+                    <h3>Ingredients</h3>
+                    <div class="servings-control">
+                        <label for="servings">Servings:</label>
+                        <div class="servings-buttons">
+                            <button class="servings-btn" data-action="decrease">-</button>
+                            <input type="number" id="servings" value="2" min="1" max="10">
+                            <button class="servings-btn" data-action="increase">+</button>
+                        </div>
+                    </div>
+                    <div class="ingredients-search">
+                        <input type="text" placeholder="Search ingredients..." id="ingredientSearch">
+                    </div>
+                    <ul id="ingredients">
+                        <li><input type="checkbox" id="ing1"><label for="ing1">1 cup quinoa</label></li>
+                        <li><input type="checkbox" id="ing2"><label for="ing2">2 cups water</label></li>
+                        <li><input type="checkbox" id="ing3"><label for="ing3">200g chicken breast (or tofu)</label></li>
+                        <li><input type="checkbox" id="ing4"><label for="ing4">1 avocado</label></li>
+                        <li><input type="checkbox" id="ing5"><label for="ing5">1 bell pepper</label></li>
+                        <li><input type="checkbox" id="ing6"><label for="ing6">2 cups spinach</label></li>
+                        <li><input type="checkbox" id="ing7"><label for="ing7">2 tbsp olive oil</label></li>
+                        <li><input type="checkbox" id="ing8"><label for="ing8">1 lemon</label></li>
+                        <li><input type="checkbox" id="ing9"><label for="ing9">Salt and pepper to taste</label></li>
+                    </ul>
+                </div>
+                <div class="steps">
+                    <h3>Instructions</h3>
+                    <div class="recipe-tips">
+                        <h4><i class="fas fa-lightbulb"></i> Pro Tips</h4>
+                        <ul>
+                            <li>Rinse quinoa thoroughly to remove bitter saponins</li>
+                            <li>Let the salad rest for 10 minutes after mixing for better flavor</li>
+                            <li>Store leftovers in an airtight container for up to 3 days</li>
+                        </ul>
+                    </div>
+                    <div class="step" data-time="15">
+                        <h4>Step 1: Cook Quinoa</h4>
+                        <p>Rinse quinoa and cook with water for 15 minutes. Let it cool.</p>
+                        <div class="step-controls">
+                            <button class="timer-btn" data-time="15">Start Timer</button>
+                            <div class="timer-display"></div>
+                        </div>
+                        <div class="step-tips">
+                            <button class="tip-btn"><i class="fas fa-info-circle"></i> Tips</button>
+                            <div class="tip-content">
+                                <p>For fluffier quinoa, use a 1:2 ratio of quinoa to water.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step" data-time="10">
+                        <h4>Step 2: Prepare Protein</h4>
+                        <p>Cook chicken breast (or tofu) with olive oil until done.</p>
+                        <div class="step-controls">
+                            <button class="timer-btn" data-time="10">Start Timer</button>
+                            <div class="timer-display"></div>
+                        </div>
+                        <div class="step-tips">
+                            <button class="tip-btn"><i class="fas fa-info-circle"></i> Tips</button>
+                            <div class="tip-content">
+                                <p>For juicier chicken, let it rest for 5 minutes after cooking.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step" data-time="5">
+                        <h4>Step 3: Chop Vegetables</h4>
+                        <p>Dice bell pepper and avocado. Wash spinach.</p>
+                        <div class="step-controls">
+                            <button class="timer-btn" data-time="5">Start Timer</button>
+                            <div class="timer-display"></div>
+                        </div>
+                        <div class="step-tips">
+                            <button class="tip-btn"><i class="fas fa-info-circle"></i> Tips</button>
+                            <div class="tip-content">
+                                <p>Cut vegetables into similar sizes for better presentation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <h4>Step 4: Combine</h4>
+                        <p>Mix all ingredients in a large bowl. Add lemon juice, salt, and pepper.</p>
+                        <div class="step-tips">
+                            <button class="tip-btn"><i class="fas fa-info-circle"></i> Tips</button>
+                            <div class="tip-content">
+                                <p>Add dressing gradually to prevent over-saturation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews-section">
+            <h2>Recipe Reviews</h2>
+            <div class="rating-summary">
+                <div class="average-rating">
+                    <span class="rating-number">4.8</span>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <span class="total-reviews">Based on 128 reviews</span>
+                </div>
+                <div class="rating-bars">
+                    <div class="rating-bar">
+                        <span>5 stars</span>
+                        <div class="bar"><div class="fill" style="width: 75%"></div></div>
+                        <span>75%</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span>4 stars</span>
+                        <div class="bar"><div class="fill" style="width: 15%"></div></div>
+                        <span>15%</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span>3 stars</span>
+                        <div class="bar"><div class="fill" style="width: 5%"></div></div>
+                        <span>5%</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span>2 stars</span>
+                        <div class="bar"><div class="fill" style="width: 3%"></div></div>
+                        <span>3%</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span>1 star</span>
+                        <div class="bar"><div class="fill" style="width: 2%"></div></div>
+                        <span>2%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="add-review">
+                <h3>Rate this Recipe</h3>
+                <div class="rating-input">
+                    <div class="stars-input">
+                        <i class="far fa-star" data-rating="1"></i>
+                        <i class="far fa-star" data-rating="2"></i>
+                        <i class="far fa-star" data-rating="3"></i>
+                        <i class="far fa-star" data-rating="4"></i>
+                        <i class="far fa-star" data-rating="5"></i>
+                    </div>
+                    <textarea placeholder="Write your review (optional)"></textarea>
+                    <button class="submit-review">Submit Review</button>
+                </div>
+            </div>
+
+            <div class="reviews-list">
+                <div class="review">
+                    <div class="review-header">
+                        <img src="https://i.pravatar.cc/50?img=1" alt="User avatar" class="user-avatar">
+                        <div class="review-info">
+                            <h4>Sarah Johnson</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="review-date">2 days ago</span>
+                        </div>
+                    </div>
+                    <p class="review-text">This recipe is amazing! I made it for my family and they loved it. The quinoa was perfectly cooked and the combination of flavors is just perfect.</p>
+                    <div class="review-actions">
+                        <button class="helpful-btn"><i class="fas fa-thumbs-up"></i> Helpful (12)</button>
+                        <button class="reply-btn"><i class="fas fa-reply"></i> Reply</button>
+                    </div>
+                </div>
+
+                <div class="review">
+                    <div class="review-header">
+                        <img src="https://i.pravatar.cc/50?img=2" alt="User avatar" class="user-avatar">
+                        <div class="review-info">
+                            <h4>Mike Chen</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="review-date">1 week ago</span>
+                        </div>
+                    </div>
+                    <p class="review-text">Great healthy option! I substituted tofu for chicken and it turned out delicious. Will definitely make this again.</p>
+                    <div class="review-actions">
+                        <button class="helpful-btn"><i class="fas fa-thumbs-up"></i> Helpful (8)</button>
+                        <button class="reply-btn"><i class="fas fa-reply"></i> Reply</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="nutrition" class="nutrition-section">
+            <h2>Nutritional Information</h2>
+            <div class="nutrition-grid">
+                <div class="nutrition-item">
+                    <h3>Macronutrients</h3>
+                    <div class="nutrition-chart">
+                        <div class="chart-bar" style="--percentage: 40%">
+                            <span>Protein: 40g</span>
+                        </div>
+                        <div class="chart-bar" style="--percentage: 45%">
+                            <span>Carbs: 45g</span>
+                        </div>
+                        <div class="chart-bar" style="--percentage: 30%">
+                            <span>Fats: 30g</span>
+                        </div>
+                    </div>
+                    <div class="nutrition-calculator">
+                        <h4>Calculate Nutrition</h4>
+                        <div class="calculator-inputs">
+                            <div class="input-group">
+                                <label for="weight">Weight (g):</label>
+                                <input type="number" id="weight" value="100" min="1">
+                            </div>
+                            <div class="input-group">
+                                <label for="servings-calc">Servings:</label>
+                                <input type="number" id="servings-calc" value="1" min="1">
+                            </div>
+                        </div>
+                        <button class="calculate-nutrition">Calculate</button>
+                        <div class="nutrition-results">
+                            <div class="result-item">
+                                <span>Calories:</span>
+                                <span id="calories-result">0</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Protein:</span>
+                                <span id="protein-result">0g</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Carbs:</span>
+                                <span id="carbs-result">0g</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Fats:</span>
+                                <span id="fats-result">0g</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nutrition-item">
+                    <h3>Micronutrients</h3>
+                    <div class="micronutrients-grid">
+                        <div class="micronutrient">
+                            <i class="fas fa-vitamin"></i>
+                            <span>Vitamin B Complex</span>
+                        </div>
+                        <div class="micronutrient">
+                            <i class="fas fa-vitamin"></i>
+                            <span>Vitamin C</span>
+                        </div>
+                        <div class="micronutrient">
+                            <i class="fas fa-vitamin"></i>
+                            <span>Vitamin K</span>
+                        </div>
+                        <div class="micronutrient">
+                            <i class="fas fa-vitamin"></i>
+                            <span>Folate</span>
+                        </div>
+                        <div class="micronutrient">
+                            <i class="fas fa-vitamin"></i>
+                            <span>Magnesium</span>
+                        </div>
+                        <div class="micronutrient">
+                            <i class="fas fa-vitamin"></i>
+                            <span>Iron</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="customization" class="customization-section">
+            <h2>Customization Options</h2>
+            <div class="customization-options">
+                <div class="option">
+                    <h3><i class="fas fa-leaf"></i> Vegetarian Option</h3>
+                    <p>Replace chicken with firm tofu</p>
+                    <button class="apply-option" data-option="vegetarian">Apply</button>
+                </div>
+                <div class="option">
+                    <h3><i class="fas fa-coins"></i> Budget-Friendly</h3>
+                    <p>Use brown rice instead of quinoa</p>
+                    <button class="apply-option" data-option="budget">Apply</button>
+                </div>
+                <div class="option">
+                    <h3><i class="fas fa-pepper-hot"></i> Spicy Version</h3>
+                    <p>Add chili flakes and jalapeños</p>
+                    <button class="apply-option" data-option="spicy">Apply</button>
+                </div>
+                <div class="option">
+                    <h3><i class="fas fa-sliders-h"></i> Custom Modifications</h3>
+                    <div class="custom-modifications">
+                        <div class="modification-group">
+                            <label>Protein Source:</label>
+                            <select id="protein-source">
+                                <option value="chicken">Chicken Breast</option>
+                                <option value="tofu">Firm Tofu</option>
+                                <option value="tempeh">Tempeh</option>
+                                <option value="seitan">Seitan</option>
+                            </select>
+                        </div>
+                        <div class="modification-group">
+                            <label>Grain:</label>
+                            <select id="grain">
+                                <option value="quinoa">Quinoa</option>
+                                <option value="rice">Brown Rice</option>
+                                <option value="couscous">Couscous</option>
+                                <option value="bulgur">Bulgur</option>
+                            </select>
+                        </div>
+                        <div class="modification-group">
+                            <label>Vegetables:</label>
+                            <div class="vegetable-options">
+                                <label><input type="checkbox" value="bell-pepper" checked> Bell Pepper</label>
+                                <label><input type="checkbox" value="spinach" checked> Spinach</label>
+                                <label><input type="checkbox" value="cucumber"> Cucumber</label>
+                                <label><input type="checkbox" value="tomato"> Tomato</label>
+                            </div>
+                        </div>
+                        <div class="modification-group">
+                            <label>Dressing:</label>
+                            <select id="dressing">
+                                <option value="lemon">Lemon & Olive Oil</option>
+                                <option value="balsamic">Balsamic Vinaigrette</option>
+                                <option value="tahini">Tahini Dressing</option>
+                                <option value="yogurt">Yogurt Dressing</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="apply-custom">Apply Custom Modifications</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="cooking-mode-section" class="feature-section" style="display:none;">
+            <div class="cooking-mode-header">
+                <h2>Cooking Mode</h2>
+                <div class="cooking-controls">
+                    <button class="prev-step"><i class="fas fa-chevron-left"></i></button>
+                    <span class="step-counter">Step 1 of 4</span>
+                    <button class="next-step"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <div class="current-step">
+                <h3>Step 1: Cook Quinoa</h3>
+                <p>Rinse quinoa and cook with water for 15 minutes. Let it cool.</p>
+                <div class="step-timer">
+                    <button class="timer-btn" data-time="15">Start Timer</button>
+                    <div class="timer-display"></div>
+                </div>
+                <div class="step-checklist">
+                    <h4>Equipment Needed:</h4>
+                    <ul>
+                        <li><input type="checkbox" id="eq1"><label for="eq1">Medium saucepan</label></li>
+                        <li><input type="checkbox" id="eq2"><label for="eq2">Fine mesh strainer</label></li>
+                        <li><input type="checkbox" id="eq3"><label for="eq3">Measuring cup</label></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cooking-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+        </section>
+        <section id="collections-section" class="feature-section" style="display:none;">
+            <div class="collections-header">
+                <h2>My Recipe Collections</h2>
+                <button class="new-collection-btn">
+                    <i class="fas fa-plus"></i> New Collection
+                </button>
+            </div>
+            <div class="collections-list"></div>
+            <div class="collection-form" style="display: none;">
+                <h3>Create New Collection</h3>
+                <input type="text" placeholder="Collection Name" class="collection-name">
+                <textarea placeholder="Description (optional)" class="collection-description"></textarea>
+                <div class="collection-actions">
+                    <button class="save-collection">Save Collection</button>
+                    <button class="cancel-collection">Cancel</button>
+                </div>
+            </div>
+        </section>
+        <section id="data-management-section" class="feature-section" style="display:none;">
+            <div class="data-management-header">
+                <h2>Data Management</h2>
+            </div>
+            <div class="data-actions">
+                <button class="export-data">
+                    <i class="fas fa-download"></i> Export All Data
+                </button>
+                <button class="import-data">
+                    <i class="fas fa-upload"></i> Import Data
+                </button>
+                <button class="backup-data">
+                    <i class="fas fa-save"></i> Backup Settings
+                </button>
+                <button class="clear-data">
+                    <i class="fas fa-trash"></i> Clear All Data
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Healthy Dish</h3>
+                <p>Making healthy eating simple and delicious.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2024 Healthy Dish. All rights reserved.</p>
+    </footer>
+
+    <div class="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
