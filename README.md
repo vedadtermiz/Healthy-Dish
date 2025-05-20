@@ -1,5 +1,6 @@
 # Healthy Dish – Quinoa Power Salad
 
+Digital Design Criteria C, Druga gimnazija Sarajevo MYP 
 A modern, responsive recipe web application for the nutritious "Quinoa Power Salad." Built with HTML, CSS, and JavaScript, this project is designed for healthy eating enthusiasts who want an interactive, customizable, and beautiful recipe experience.
 
 ## Features
