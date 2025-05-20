@@ -1,0 +1,140 @@
+You are to create a complete, modern, responsive recipe web application for "Quinoa Power Salad" using only HTML, CSS, and JavaScript (no frameworks or build tools). The project must be fully functional and visually appealing, with all code organized into three files: `index.html`, `styles.css`, and `script.js`. Use only vanilla JS, HTML, and CSS (except for Font Awesome for icons).
+
+## File Structure
+
+- index.html
+- styles.css
+- script.js
+
+## General Requirements
+
+- All features must work without page reloads.
+- All user data (shopping list, collections, customizations, etc.) must persist using localStorage.
+- No backend or server required.
+- Use semantic HTML5 and accessible ARIA attributes.
+- Mobile-first, fully responsive design.
+- Use CSS variables for theming and easy color changes.
+- Include a favicon (green salad bowl emoji as SVG) via a <link rel="icon" ...> tag in the HTML head.
+- Use smooth transitions, hover effects, and modern UI/UX best practices.
+- All interactive elements must be keyboard accessible.
+
+## index.html
+
+- Include a `<head>` with meta tags for charset, viewport, title, favicon, Font Awesome, and stylesheet links.
+- Header with logo ("Healthy Dish") and navigation bar:
+    - Links: Recipe, Nutrition, Ingredients, Customize
+    - "More" dropdown: Cooking Mode, My Collections, Data
+    - Hamburger menu for mobile
+- Hero section:
+    - Large background image of a healthy salad
+    - Title: "Quinoa Power Salad"
+    - Subtitle: "A nutritious, protein-packed meal ready in under 30 minutes"
+    - Recipe metadata: time, calories, protein
+    - Buttons: Print Recipe, Share, Save, Add to Shopping List
+- Progress tracker: visual steps for Ingredients, Preparation, Cooking, Ready
+- Main content sections:
+    - Recipe: Ingredients list (checkboxes, servings calculator, search), step-by-step instructions (timers, pro tips), customization options (vegetarian, budget, spicy, custom)
+    - Reviews: Average rating, rating bars, total reviews, user review form (star rating, text), review list (avatars, helpful/reply)
+    - Nutrition: Macronutrient/micronutrient breakdown, nutrition calculator (input weight/servings, output calories/protein/carbs/fats)
+    - Shopping List: Modal to view, check off, remove, export, or clear items (persisted in localStorage)
+    - Cooking Mode: Inline section (not modal) with step navigation, timer, equipment checklist
+    - Recipe Collections: Inline section to create, view, and delete custom recipe collections (persisted in localStorage)
+    - Data Management: Inline section to export/import/backup/clear all user data (localStorage)
+- Footer: About, social links, newsletter subscription
+
+## styles.css
+
+- Use CSS variables for primary color, background, text, card, shadow, etc.
+- Style header, navigation, dropdown, and mobile menu (hamburger).
+- Hero section: full-bleed background, large title, subtitle, meta badges, action buttons.
+- Progress tracker: horizontal/vertical steps, active/inactive states.
+- Recipe section: grid layout, card styles, checkboxes, servings control, search bar, step cards, timer buttons, pro tips.
+- Reviews: rating summary, stars, bars, review cards, form, avatars, helpful/reply buttons.
+- Nutrition: grid, chart bars, calculator, micronutrient icons.
+- Shopping List: modal overlay, item list, checkboxes, remove/export/clear buttons.
+- Cooking Mode, Collections, Data Management: inline card sections, step navigation, progress bar, forms.
+- Footer: grid layout, social icons, newsletter form.
+- Responsive: breakpoints for tablet/mobile, stacked layouts, larger touch targets, collapsible nav.
+- Animations: smooth transitions for dropdowns, modals, buttons, and section reveals.
+- Accessibility: focus states, ARIA roles, sufficient color contrast.
+
+## script.js
+
+- Navigation: hamburger toggle, dropdown open/close, smooth scrolling, keyboard navigation.
+- Progress tracker: update active step as user completes recipe steps.
+- Ingredients: servings calculator (updates amounts), search filter, checkbox state saved in localStorage.
+- Step timers: start/stop, display countdown, disable while running, completion animation.
+- Pro tips: toggle visibility, only one open at a time.
+- Customization: apply vegetarian/budget/spicy/custom, update ingredients, save to localStorage.
+- Reviews: star rating input, submit review, helpful/reply, persist reviews in localStorage.
+- Nutrition calculator: calculate/display macros based on input, save last calculation.
+- Shopping List: add from ingredients, modal open/close, check/uncheck, remove, export, clear, persist in localStorage.
+- Cooking Mode: show/hide section, step navigation, timer, equipment checklist, progress bar, save progress.
+- Recipe Collections: create/view/delete collections, persist in localStorage.
+- Data Management: export/import/backup/clear all data, handle file input/output, show notifications.
+- Toast notifications: show for all user actions (success/error).
+- Accessibility: keyboard navigation for all interactive elements, ARIA attributes, focus management.
+
+## Style Guide
+
+### Color Palette
+- Primary: #2ecc71 (green), #27ae60 (dark green)
+- Accent: #e67e22 (orange), #3498db (blue), #f1c40f (yellow)
+- Background: #f9f9f9 (main), #ffffff (cards)
+- Text: #333 (main), #666 (secondary)
+- Error: #e74c3c (red)
+- Success: #2ecc71 (green)
+- Use CSS variables for all colors for easy theming.
+
+### Typography
+- Font family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+- Headings: Bold, clear hierarchy (h1 > h2 > h3, etc.)
+- Body: 1rem base, 1.6 line-height
+- Use rem/em units for scalability
+- Responsive font sizes for headings and body
+
+### Spacing & Layout
+- Use consistent spacing: 1rem, 2rem, etc. for padding/margins
+- Cards: 1.5-2rem padding, 10px border-radius, subtle box-shadow
+- Grid layouts for main sections, switch to stacked/flex on mobile
+- Section max-width: 1200px, centered with auto margins
+
+### Buttons & Inputs
+- Rounded corners (5-25px radius)
+- Primary buttons: solid background, white text, bold
+- Secondary/ghost buttons: border only, colored text
+- Hover/focus: slightly darker background, shadow or scale effect
+- Large touch targets (min 44x44px)
+- Inputs: clear borders, focus ring, padding
+
+### Iconography
+- Use Font Awesome for all icons
+- Icons should be visually aligned with text
+- Use icons for navigation, actions, and visual cues (e.g., stars, timers, checkboxes)
+
+### Cards & Modals
+- Cards: white background, rounded corners, shadow, padding
+- Modals: centered, max-width 500-600px, overlay background
+- Responsive: modals/cards fill width on mobile
+
+### Animations & Transitions
+- Use CSS transitions for hover, focus, dropdowns, modals, and section reveals (0.2-0.4s)
+- Use keyframe animations for toasts, modals, and progress bars
+- Avoid excessive animation; keep it subtle and purposeful
+
+### Accessibility
+- All interactive elements must be keyboard accessible (tab, enter, space)
+- Use ARIA roles/labels for navigation, modals, and custom controls
+- Sufficient color contrast (WCAG AA)
+- Focus states must be visible and distinct
+- Use semantic HTML5 elements (nav, main, section, footer, etc.)
+- All images/icons must have alt text or aria-hidden as appropriate
+
+## Deliverables
+
+- index.html
+- styles.css
+- script.js
+- Favicon included via a <link rel="icon" ...> tag in the HTML head
+
+**The result should be a beautiful, fully interactive, and accessible recipe web app for Quinoa Power Salad, with all features working seamlessly on desktop and mobile.** 
